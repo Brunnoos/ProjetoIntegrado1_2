@@ -553,8 +553,8 @@ body {
 	border-radius: 24px;
 }
 
-#local-photo-button {
-	background-image: url("assets/icons/camera_icon.png");
+#local-number-button {
+	background-image: url("assets/icons/call_white.png");
 	background-repeat: no-repeat;
 	background-size: initial;
 	background-position: center;
