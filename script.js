@@ -1,5 +1,6 @@
 ﻿var inst = [];
 var list_bairro = []
+
 $.get("data.json",
     function (data) {
         /**transforma o arquivo .json em um array */
@@ -78,9 +79,18 @@ $.get("data.json",
             );
             
         }
+        for (let x = 0; x < inst.length; x++) {
+            if(inst[x].horario == "24h"){
+                console.log(inst[x]);
+                generatePlantao(inst[x]);
+            }
+        }
         AddClickEvent();
     }
 );
+
+
+
 
 function AddClickEvent() {
     $(".bairro-header").each(function(){
@@ -228,4 +238,24 @@ function closeLocalInfo() {
     localInfoBg.css("animation-name","hideBg") ;
     localInfo.css("animation-name","closeLocalInfo");
     setTimeout(function(){ localInfoBg.css("display", "none"); }, 500);
+}
+
+function generatePlantao(element) {
+    console.log("chamado");
+    $(".plantao-container").append(
+        "<div class=\"plantao-block\">"+
+            "<div class=\"plantao-header\">"+
+                "<p>"+ element.nome+"</p>"+
+                "<button class=\"call\"></button>"+
+            "</div>"+
+            "<div class=\"documentacao\">"+
+                "<p class=\"doc-title\">Documentação</p>"+
+                "<p class=\"doc-text\">"+element.docs+"</p>"+
+            "</div>"+
+            "<div class=\"mapa-section\">"+
+                "<p>Ver no mapa</p>"+
+                "<button class=\"open-map\">mapa</button>"+
+            "</div>"+
+        "</div>"
+    );
 }

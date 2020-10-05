@@ -3,30 +3,35 @@
         "nome" : "instituicao 01",
         "numero" : "85955555555",
         "bairro" : "messejana",
-        "horario" : "09h - 22h"
+        "horario" : "09h - 22h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
         "nome" : "instituicao 02",
         "numero" : "85942424242",
         "bairro" : "messejana",
-        "horario" : "08h - 12h"
+        "horario" : "08h - 12h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
         "nome" : "instituicao 03",
         "numero" : "8534349494",
         "bairro" : "bom jardim",
-        "horario" : "07h - 19h"
+        "horario" : "07h - 19h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
         "nome" : "instituicao 04",
         "numero" : "85942424242",
         "bairro" : "bom jardim",
-        "horario" : "08h - 17h"
+        "horario" : "08h - 17h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
         "nome" : "instituicao 05",
         "numero" : "85955555555",
         "bairro" : "messejana",
-        "horario" : "24h"
+        "horario" : "24h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     }
 ]
