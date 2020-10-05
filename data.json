@@ -1,31 +1,31 @@
-[
+﻿[
     {
         "nome" : "instituicao 01",
-        "numero" : 85955555555,
+        "numero" : "85955555555",
         "bairro" : "messejana",
         "horario" : "09h - 22h"
     },
     {
         "nome" : "instituicao 02",
-        "numero" : 85942424242,
+        "numero" : "85942424242",
         "bairro" : "messejana",
         "horario" : "08h - 12h"
     },
     {
         "nome" : "instituicao 03",
-        "numero" : 85942424242,
+        "numero" : "85942424242",
         "bairro" : "bom jardim",
         "horario" : "07h - 19h"
     },
     {
         "nome" : "instituicao 04",
-        "numero" : 85942424242,
+        "numero" : "85942424242",
         "bairro" : "bom jardim",
         "horario" : "08h - 17h"
     },
     {
         "nome" : "instituicao 05",
-        "numero" : 85955555555,
+        "numero" : "85955555555",
         "bairro" : "messejana",
         "horario" : "24h"
     }

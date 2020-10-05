@@ -186,7 +186,11 @@ function separaInfo(nm) {
             $("#local-title").html(element.nome);
 
             var localContent = "";
-            localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.horario + "</div></div>";
+
+            if (element.horario != "null")
+                localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.horario + "</div></div>";
+            if (element.numero != "null")
+                localContent += "<div><div class=\"local-info-title\">Número</div><div class=\"local-info-desc\">" + element.numero + "</div></div>";
             
             $("#local-content").html(localContent);
         }
