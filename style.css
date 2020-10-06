@@ -724,6 +724,10 @@ body {
 	margin-block-end: .7em;
 }
 
+.plantao-header a {
+	margin-left: auto;
+}
+
 .call{
 	margin-left: auto;
 	background-image: url(assets/icons/call.png);
@@ -756,6 +760,10 @@ body {
 	display: flex;
 	align-items: center;
 	margin: 0 13px 0 11px;
+}
+
+.mapa-section a {
+	margin-left: auto;
 }
 
 .open-map{

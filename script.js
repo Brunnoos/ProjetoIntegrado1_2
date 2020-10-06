@@ -221,11 +221,13 @@ function separaInfo(nm) {
 
                 $("#local-number").attr("href", "tel:" + element.numero);
             }
+            $("#local-map").attr("href", element.link_map);
 
             if (element.hasOwnProperty('endereco'))
                 localContent += "<div><div class=\"local-info-title\">Endereço</div><div class=\"local-info-desc\">" + element.endereco + "</div></div>";
             
             $("#local-content").html(localContent);
+            
 
         }
     }
@@ -246,7 +248,7 @@ function generatePlantao(element) {
         "<div class=\"plantao-block\">"+
             "<div class=\"plantao-header\">"+
                 "<p>"+ element.nome+"</p>"+
-                "<button class=\"call\"></button>"+
+                "<a href=\"tel:" + element.numero + "\"><button class=\"call\"></button></a>"+
             "</div>"+
             "<div class=\"documentacao\">"+
                 "<p class=\"doc-title\">Documentação</p>"+
@@ -254,7 +256,7 @@ function generatePlantao(element) {
             "</div>"+
             "<div class=\"mapa-section\">"+
                 "<p>Ver no mapa</p>"+
-                "<button class=\"open-map\">mapa</button>"+
+                "<a href=\"" + element.link_map + "\" target=\"_blank\"><button class=\"open-map\">mapa</button></a>"+
             "</div>"+
         "</div>"
     );
