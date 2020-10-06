@@ -1,0 +1,108 @@
+Para adicionar uma nova instituição, siga os passos abaixo
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 1	
+
+Obtenha os dados do local a ser adicionado. Dados obrigatórios são: nome do local, número para contato, e link do local no Google Maps.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 2
+
+Copie o exemplo a seguir, incluindo "{" a "}"
+
+{
+	"nome" : "NOME_DA_INSTITUIÇÃO",
+	"link_map":"LINK_DO_LOCAL_NO_MAPA_GOOGLE", 
+        "numero" : "TELEFONE_PARA_CONTATO",
+        "bairro" : "BAIRRO_DA_INSTITUÇÃO",
+        "horario" : "HORÁRIO_DE_FUNCIONAMENTO",
+        "docs" : "DOCUMENTOS_NECESSÁRIOS_PARA_ATENDIMENTO"
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 3
+
+Abra o arquivo que contém a lista atual, chamado "data.json".
+
+A lista total sempre começa com um "[" e fecha com "]", como o exemplo abaixo:
+
+Exemplo --------------
+[
+    {
+        "nome" : "instituicao 01",
+	"link_map":"https://link.com", 
+        "numero" : "85955555555",
+        "bairro" : "messejana",
+        "horario" : "09h - 22h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+    },
+    {
+        "nome" : "instituicao 02",
+	"link_map":"https://link.com", 
+        "numero" : "85942424242",
+        "bairro" : "messejana",
+        "horario" : "08h - 12h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+    }
+]
+Fim do Exemplo --------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 4
+
+Encontre o último "}" da lista. Adicione uma vírgula logo em seguida a ele.
+
+Ao fim deste passo, o fim da lista deve parecer assim:
+
+Exemplo --------------
+    {
+        "nome" : "instituicao 02",
+	"link_map":"https://link.com", 
+        "numero" : "85942424242",
+        "bairro" : "messejana",
+        "horario" : "08h - 12h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+    },
+]
+Fim do Exemplo --------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 5
+
+Cole o texto que foi copiado no PASSO 2 e adicione ao fim da lista, antes de "]" e após o último "},".
+
+Ao fim deste passo, o fim da lista deve parecer assim:
+
+Exemplo --------------
+    {
+        "nome" : "instituicao 02",
+	"link_map":"https://link.com", 
+        "numero" : "85942424242",
+        "bairro" : "messejana",
+        "horario" : "08h - 12h",
+        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
+    },
+    {
+	"nome" : "NOME_DA_INSTITUIÇÃO",
+	"link_map":"LINK_DO_LOCAL_NO_MAPA_GOOGLE", 
+        "numero" : "TELEFONE_PARA_CONTATO",
+        "bairro" : "BAIRRO_DA_INSTITUÇÃO",
+        "horario" : "HORÁRIO_DE_FUNCIONAMENTO",
+        "docs" : "DOCUMENTOS_NECESSÁRIOS_PARA_ATENDIMENTO"
+    }
+]
+Fim do Exemplo --------------
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 6
+
+Substitua as partes em maísculo do exemplo copiado com as informações obtidas da instituição. Tenha cuidado para não apagar qualquer áspa.
+Além disso, siga as seguintes regras quando passar as informações:
+
+	- Para número de contato, coloque apenas números, sem espaços ou traços, e inclua o DDD. Por exemplo: 85988887777
+	- Para o bairro, atente-se para escrever o nome exatamente como está em outras instituições de mesmo bairro, para que elas fiquem juntas.
+	- Instituições com horário definido em "24h" serão adicionadas à lista de Plantão.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+PASSO 7
+
+Salve o arquivo "data.json" alterado. Pronto! A instituição nova deve aparecer na lista.

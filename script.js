@@ -60,7 +60,7 @@ $.get("data.json",
                 "<div class=\"local-ref\">"+
                     "<div class=\"local-ref-title\">"+ element.list[j].nome +"</div>"+
                     "<div class=\"local-ref-info\" name=\""+element.list[j].nome+"\"></div>"+
-                    "<div class=\"local-ref-map\"></div>"+
+                    "<a href=\"" + element.list[j].link_map + "\" target=\"_blank\"><div class=\"local-ref-map\"></div> </a>"+
                 "</div>";
             }
             
