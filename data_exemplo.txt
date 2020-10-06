@@ -101,6 +101,7 @@ Além disso, siga as seguintes regras quando passar as informações:
 	- Para número de contato, coloque apenas números, sem espaços ou traços, e inclua o DDD. Por exemplo: 85988887777
 	- Para o bairro, atente-se para escrever o nome exatamente como está em outras instituições de mesmo bairro, para que elas fiquem juntas.
 	- Instituições com horário definido em "24h" serão adicionadas à lista de Plantão.
+	- Para janelas de horário de funcionamento, use o seguinte formado: "Xh-Yh", onde X é o horário de abertura, e Y o de fechamento.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 PASSO 7

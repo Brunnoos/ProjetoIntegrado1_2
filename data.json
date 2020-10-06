@@ -5,6 +5,8 @@
         "numero" : "85955555555",
         "bairro" : "messejana",
         "horario" : "09h - 22h",
+	"preco": "gratuito",
+	"atendimento": "presencial",
         "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
@@ -13,6 +15,8 @@
         "numero" : "85942424242",
         "bairro" : "messejana",
         "horario" : "08h - 12h",
+	"preco": "comum",
+	"atendimento": "online",
         "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
@@ -21,6 +25,8 @@
         "numero" : "8534349494",
         "bairro" : "bom jardim",
         "horario" : "07h - 19h",
+	"preco": "social",
+	"atendimento": "presencial",
         "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
@@ -29,6 +35,8 @@
         "numero" : "85942424242",
         "bairro" : "bom jardim",
         "horario" : "08h - 17h",
+	"preco": "social",
+	"atendimento": "online",
         "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     },
     {
@@ -37,6 +45,8 @@
         "numero" : "85955555555",
         "bairro" : "messejana",
         "horario" : "24h",
+	"preco": "gratuito",
+	"atendimento": "ambos",
         "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
     }
 ]
