@@ -1,9 +1,9 @@
 ﻿var inst = [];
 var list_bairro = [];
 
-var inst_filters = {};
+var inst_filters = {}; /* Lista de características passiveis de filtro (key) e suas opções (value) */
 
-var filterList = {};
+var filterList = {}; /* Lista de características passiveis de filtro (key) e suas opções (value) em boolean */
 var filterApplied = []; /* True sempre que qualquer filtro esteja ativo */
 
 $.get("data.json",
@@ -69,7 +69,8 @@ $.get("data.json",
                     }
                 }
             }
-
+            
+            /* Preenche as variáveis que guardam as listas de características passíveis de aplicar filtro e suas opções */
             for (let j = 0; j < element.list.length; j++) {
                 list_inst += 
                 "<div class=\"local-ref\">"+
@@ -206,6 +207,7 @@ function closeFilterTab() {
     setTimeout(function(){ filterTabBg.css("display", "none"); }, 500);
 };
 
+/* Cria a lista de Filtros, tanto o Dicionário que guarda os booleans, quando o html em si */
 function createFilterList() {
     for (var key in inst_filters) {
         var newFilterSubList = [];
@@ -258,17 +260,18 @@ function filterSelect() {
     var filterType = $(this).prev(".filter-option").attr("type");
     var filter = $(this).prev(".filter-option").attr("value");
     var filterIndex = inst_filters[filterType].indexOf(filter);
-    console.log(filterIndex);
 
     var filterTypeSize = filterList[filterType].length - 1; /* Exclui o último, que equivale a opção Tudo */
     var filterTypeCount = 0;
 
+    /* Altera o estado da boolean de um filtro específico */
     if (filterList[filterType][filterIndex] == true) {
         filterList[filterType][filterIndex] = false;
     } else {
         filterList[filterType][filterIndex] = true;
     }
     
+    /* Caso o filtro ativado seja o equivalente a Tudo */
     if (filterIndex == filterTypeSize) {
         for (var i = 0; i < filterTypeSize; i++) {
             filterList[filterType][i] = false;
@@ -277,13 +280,16 @@ function filterSelect() {
         showAllElements();
         checkBairroList();
     }
+    /* Caso não */
     else {
+        /* Checa se, com o filtro mais recente ativado, todos de um tipo ficam ativados, equivalente ao Tudo */
         for (var i = 0; i < filterTypeSize; i++) {
             if (filterList[filterType][i] == true) {
                 filterTypeCount++;
             }
         }
-
+        
+        /* Caso isso tenha ocorrido, torna todos faltos, exceto Tudo, e mostra tudo */
         if (filterTypeCount == filterTypeSize) {
             for (var i = 0; i < filterTypeSize; i++) {
                 filterList[filterType][i] = false;
@@ -294,9 +300,10 @@ function filterSelect() {
 
             checkBairroList();
         }
+        /* Caso não */
         else {
             
-            filterList[filterType][filterTypeSize] = false;
+            filterList[filterType][filterTypeSize] = false; /* Torna a opção Tudo,  que por padrão é true, false */
             if (filterApplied != true) {
                 hideAllElements();
 
@@ -308,6 +315,7 @@ function filterSelect() {
                     }
                 }
             }
+            /* Caso um filtro de outro tipo já esteja aplicado, não intefere nele, aprofundando a filtragem */
             else {
                 for (let i = 0; i < inst.length; i++) {
                     var element = inst[i];
@@ -324,6 +332,7 @@ function filterSelect() {
     }
 };
 
+/* SEM USO NO MOMENTO */
 function reApplyFilter(){
     for (var key in filterList) {
         for (let i = 0; i < filterList[key].length; i++) {
@@ -340,6 +349,7 @@ function reApplyFilter(){
     }
 }
 
+/* Esconde um elemento */
 function hideElement(nome) {
     $(".local-ref").each(function(){
         if ($(this).find(".local-ref-info").attr("name") == nome)
@@ -350,6 +360,7 @@ function hideElement(nome) {
     });    
 };
 
+/* Mostra um elemento */
 function showElement(nome) {
     $(".local-ref").each(function(){
         if ($(this).find(".local-ref-info").attr("name") == nome)
@@ -359,6 +370,7 @@ function showElement(nome) {
     }); 
 };
 
+/* Esconde todos os elementos */
 function hideAllElements() {
     $(".local-ref").each(function(){
         $(this).css("display", "none");
@@ -367,6 +379,7 @@ function hideAllElements() {
     filterApplied = true;
 }
 
+/* Mostra todos os elementos */
 function showAllElements() {
     $(".local-ref").each(function(){
         $(this).css("display", "flex");
@@ -375,6 +388,7 @@ function showAllElements() {
     filterApplied = false;
 }
 
+/* Chega para ver se uma lista de um bairro foi completamente escondida, escondendo tbm o bairro em si */
 function checkBairroList(){
     $(".bairro-locais-list").each(function(){
         var locaisEscondidos = 0;
