@@ -120,6 +120,9 @@ body {
 	border-radius: 20px;
 	margin: 16px;
 }
+.tab-icon:active{
+	background-color: #348083;
+}
 .tab-icon:first-child {
 	margin-left: 32px;
 }
