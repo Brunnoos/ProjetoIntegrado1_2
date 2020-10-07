@@ -7,7 +7,7 @@
                 "horario" : "Segunda a Sexta - 08h - 21h; Sábado - 08h - 12h",
                 "preco": "particular com convênio",
                 "atendimento": "presencial",
-                "docs" : "-"
+                "docs" : "Sem informações"
         },
         {
                 "nome" : "Instituto Raízes",
@@ -24,27 +24,27 @@
                 "link_map":"https://goo.gl/maps/fwByEDQsgSkiMkrt6", 
                 "numero" : "8532710564",
                 "bairro" : "Lago Jacarey",
-                "horario" : "-",
                 "preco": "particular",
+		"horario" : "Sem informações",
                 "atendimento": "presencial",
-                "docs" : "-"
+                "docs" : "Sem informações"
         },
         {
-                "nome" : "Cínica escola de psicologia da UFC",
+                "nome" : "Cínica Escola de Psicologia da UFC",
                 "link_map":"https://goo.gl/maps/gNLtjTk2T4SdUPyz9", 
                 "numero" : "8533667690",
                 "bairro" : "bairro Benfica",
-                "horario" : "-",
+                "horario" : "Sem informações",
                 "preco": "gratuito",
                 "atendimento": "presencial",
-                "docs" : "-"
+                "docs" : "Sem informações"
         },
         {
-                "nome" : "NAMI - Clínica escola de psicologia Unifor",
+                "nome" : "NAMI - Clínica Escola de Psicologia Unifor",
                 "link_map":"https://www.google.com.br/maps/dir//Biblioteca+Central+do+Campus+do+Pici+-+Campus+do+Pici,+Biblioteca,+Av.+Mister+Hull,+s%2Fn+-+Pici,+Fortaleza+-+CE,+60440-970/@-3.743315,-38.5755376,17z/data=!4m16!1m6!3m5!1s0x0:0xa625eaa073c89d49!2sBiblioteca+Central+do+Campus+do+Pici!8m2!3d-3.7425144!4d-38.5742889!4m8!1m0!1m5!1m1!1s0x7c74bdbd83d76dd:0xa625eaa073c89d49!2m2!1d-38.574289!2d-3.742514!3e3", 
                 "numero" : "8534773600",
                 "bairro" : "Edson Queiroz",
-                "horario" : "-",
+                "horario" : "Sem informações",
                 "preco": "gratuito - particular - convênio",
                 "atendimento": "ambos",
                 "docs" : "Identidade;<br>CPF;<br>Comprovante de endereço;<br>Certidão de nascimento (se for criança);<br>Cartão do SUS"
@@ -60,13 +60,13 @@
                 "docs" :  "Para ser atendido você deve ligar e cadastrar-se na lista de espera, fornecendo alguns dados básicos. "
         },
         {
-                "nome" : "Hospital de saude mental Professor Frota Pinto(HSMM)",
+                "nome" : "Hospital de Saúde Mental Professor Frota Pinto(HSMM)",
                 "link_map" : "https://goo.gl/maps/mfJC3rWpvpRArbBt5",
                 "numero" : "8531014348",
                 "bairro" : "Messejana",
                 "horario" : "24h",
                 "preco" : "gratuito",
                 "atendimento" : "Presencial",
-                "docs" :  "-"
+                "docs" :  "A averiguar"
         }
 ]

@@ -500,10 +500,10 @@ function separaInfo(nm) {
             localContent += "<div id=\"local-tags\">";
 
             if (element.hasOwnProperty('preco'))
-                localContent += "<div class=\"local-tag\">" + element.preco + "</div>";
+                localContent += "<div class=\"local-tag\">" + element.preco.substring(0,1).toUpperCase() + element.preco.substring(1) + "</div>";
 
             if (element.hasOwnProperty('atendimento'))
-                localContent += "<div class=\"local-tag\">" + element.atendimento + "</div>";
+                localContent += "<div class=\"local-tag\">" + element.atendimento.substring(0,1).toUpperCase() + element.atendimento.substring(1) + "</div>";
 
             localContent += "</div>";
 
