@@ -19,7 +19,7 @@
         },
         {
             "src" :"assets/icons/theme.png",
-            "sizes" : "512x512",
+            "sizes" : "310x310",
             "type" : "image/png"
         }
     ]
