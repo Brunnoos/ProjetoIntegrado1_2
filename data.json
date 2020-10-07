@@ -1,52 +1,72 @@
 ﻿[
-    {
-        "nome" : "instituicao 01",
-	"link_map":"https://www.google.com.br/maps/dir//Biblioteca+Central+do+Campus+do+Pici+-+Campus+do+Pici,+Biblioteca,+Av.+Mister+Hull,+s%2Fn+-+Pici,+Fortaleza+-+CE,+60440-970/@-3.743315,-38.5755376,17z/data=!4m16!1m6!3m5!1s0x0:0xa625eaa073c89d49!2sBiblioteca+Central+do+Campus+do+Pici!8m2!3d-3.7425144!4d-38.5742889!4m8!1m0!1m5!1m1!1s0x7c74bdbd83d76dd:0xa625eaa073c89d49!2m2!1d-38.574289!2d-3.742514!3e3", 
-        "numero" : "85955555555",
-        "bairro" : "messejana",
-        "horario" : "09h - 22h",
-	"preco": "gratuito",
-	"atendimento": "presencial",
-        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-    },
-    {
-        "nome" : "instituicao 02",
-	"link_map":"https://www.google.com.br/maps/dir//Bloco+Didático+SMD+-+Instituto+UFC+Virtual+-+R.+Pernambuco,+2986-3030+-+Demócrito+Rocha,+Fortaleza+-+CE,+60440-140/@-3.7487279,-38.5792043,19.5z/data=!4m16!1m6!3m5!1s0x7c74be7e6f1825b:0xce7b00de509bd6f!2sBloco+Didático+SMD+-+Instituto+UFC+Virtual!8m2!3d-3.7486783!4d-38.5791014!4m8!1m0!1m5!1m1!1s0x7c74be7e6f1825b:0xce7b00de509bd6f!2m2!1d-38.5791012!2d-3.7486786!3e3", 
-        "numero" : "85942424242",
-        "bairro" : "messejana",
-        "horario" : "08h - 12h",
-	"preco": "comum",
-	"atendimento": "online",
-        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-    },
-    {
-        "nome" : "instituicao 03",
-	"link_map":"https://www.google.com.br/maps/dir//Biblioteca+Central+do+Campus+do+Pici+-+Campus+do+Pici,+Biblioteca,+Av.+Mister+Hull,+s%2Fn+-+Pici,+Fortaleza+-+CE,+60440-970/@-3.743315,-38.5755376,17z/data=!4m16!1m6!3m5!1s0x0:0xa625eaa073c89d49!2sBiblioteca+Central+do+Campus+do+Pici!8m2!3d-3.7425144!4d-38.5742889!4m8!1m0!1m5!1m1!1s0x7c74bdbd83d76dd:0xa625eaa073c89d49!2m2!1d-38.574289!2d-3.742514!3e3", 
-        "numero" : "8534349494",
-        "bairro" : "bom jardim",
-        "horario" : "07h - 19h",
-	"preco": "social",
-	"atendimento": "presencial",
-        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-    },
-    {
-        "nome" : "instituicao 04",
-	"link_map":"https://www.google.com.br/maps/dir//Bloco+Didático+SMD+-+Instituto+UFC+Virtual+-+R.+Pernambuco,+2986-3030+-+Demócrito+Rocha,+Fortaleza+-+CE,+60440-140/@-3.7487279,-38.5792043,19.5z/data=!4m16!1m6!3m5!1s0x7c74be7e6f1825b:0xce7b00de509bd6f!2sBloco+Didático+SMD+-+Instituto+UFC+Virtual!8m2!3d-3.7486783!4d-38.5791014!4m8!1m0!1m5!1m1!1s0x7c74be7e6f1825b:0xce7b00de509bd6f!2m2!1d-38.5791012!2d-3.7486786!3e3", 
-        "numero" : "85942424242",
-        "bairro" : "bom jardim",
-        "horario" : "08h - 17h",
-	"preco": "social",
-	"atendimento": "online",
-        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-    },
-    {
-        "nome" : "instituicao 05",
-	"link_map":"https://www.google.com.br/maps/dir//Biblioteca+Central+do+Campus+do+Pici+-+Campus+do+Pici,+Biblioteca,+Av.+Mister+Hull,+s%2Fn+-+Pici,+Fortaleza+-+CE,+60440-970/@-3.743315,-38.5755376,17z/data=!4m16!1m6!3m5!1s0x0:0xa625eaa073c89d49!2sBiblioteca+Central+do+Campus+do+Pici!8m2!3d-3.7425144!4d-38.5742889!4m8!1m0!1m5!1m1!1s0x7c74bdbd83d76dd:0xa625eaa073c89d49!2m2!1d-38.574289!2d-3.742514!3e3", 
-        "numero" : "85955555555",
-        "bairro" : "messejana",
-        "horario" : "24h",
-	"preco": "gratuito",
-	"atendimento": "ambos",
-        "docs" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea"
-    }
+        {
+                "nome" : "Clínica Arcádia",
+                "link_map":"https://goo.gl/maps/Rj8sK9cbpAvA989MA", 
+                "numero" : "8530345508",
+                "bairro" : "bairro de Fátima",
+                "horario" : "Segunda a Sexta - 08h - 21h; Sábado - 08h - 12h",
+                "preco": "particular com convênio",
+                "atendimento": "presencial",
+                "docs" : "-"
+        },
+        {
+                "nome" : "Instituto Raízes",
+                "link_map":"https://goo.gl/maps/u7oDGZfWRjMkfkwE9", 
+                "numero" : "85986238241",
+                "bairro" : "Edson Queiroz",
+                "horario" : "Segunda a sexta de 8h - 18h; Sábado de 8h - 12h",
+                "preco": "social",
+                "atendimento": "presencial",
+                "docs" : "*Atendimento por preço social (Valores variam entre R$ 10,00 a R$ 60,00.);<br> Encaminhamento de algum órgão Público (CRAS, Posto de Saúde e etc);<br> Documentos pessoais (RG, CPF, CT ou CNH) e dos membros da família que moram na residência;<br>Comprovantes de renda dos membros da família que contribuem para a renda familiar;<br> Comprovante de residência atual Comprovantes de uso de medicamento contínuo;<br> Comprovante de aluguel ou financiamento habitacional."
+        },
+        {
+                "nome" : "Instituto Sherpa",
+                "link_map":"https://goo.gl/maps/fwByEDQsgSkiMkrt6", 
+                "numero" : "8532710564",
+                "bairro" : "Lago Jacarey",
+                "horario" : "-",
+                "preco": "particular",
+                "atendimento": "presencial",
+                "docs" : "-"
+        },
+        {
+                "nome" : "Cínica escola de psicologia da UFC",
+                "link_map":"https://goo.gl/maps/gNLtjTk2T4SdUPyz9", 
+                "numero" : "8533667690",
+                "bairro" : "bairro Benfica",
+                "horario" : "-",
+                "preco": "gratuito",
+                "atendimento": "presencial",
+                "docs" : "-"
+        },
+        {
+                "nome" : "NAMI - Clínica escola de psicologia Unifor",
+                "link_map":"https://www.google.com.br/maps/dir//Biblioteca+Central+do+Campus+do+Pici+-+Campus+do+Pici,+Biblioteca,+Av.+Mister+Hull,+s%2Fn+-+Pici,+Fortaleza+-+CE,+60440-970/@-3.743315,-38.5755376,17z/data=!4m16!1m6!3m5!1s0x0:0xa625eaa073c89d49!2sBiblioteca+Central+do+Campus+do+Pici!8m2!3d-3.7425144!4d-38.5742889!4m8!1m0!1m5!1m1!1s0x7c74bdbd83d76dd:0xa625eaa073c89d49!2m2!1d-38.574289!2d-3.742514!3e3", 
+                "numero" : "8534773600",
+                "bairro" : "Edson Queiroz",
+                "horario" : "-",
+                "preco": "gratuito - particular - convênio",
+                "atendimento": "ambos",
+                "docs" : "Identidade;<br>CPF;<br>Comprovante de endereço;<br>Certidão de nascimento (se for criança);<br>Cartão do SUS"
+        },
+        {
+                "nome" : "Instituto Bia Dote",
+                "link_map" : "https://goo.gl/maps/WDZaUdc3vsGnnr9W8",
+                "numero" : "8532642992",
+                "bairro" : "Aldeota",
+                "horario" : "Segunda a Sexta das 8h - 18h",
+                "preco" : "gratuito",
+                "atendimento" : "Presencial",
+                "docs" :  "Para ser atendido você deve ligar e cadastrar-se na lista de espera, fornecendo alguns dados básicos. "
+        },
+        {
+                "nome" : "Hospital de saude mental Professor Frota Pinto(HSMM)",
+                "link_map" : "https://goo.gl/maps/mfJC3rWpvpRArbBt5",
+                "numero" : "8531014348",
+                "bairro" : "Messejana",
+                "horario" : "24h",
+                "preco" : "gratuito",
+                "atendimento" : "Presencial",
+                "docs" :  "-"
+        }
 ]
