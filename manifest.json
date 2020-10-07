@@ -2,8 +2,8 @@
     "name" : "projetoV2",
     "short_name" : "proj",
     "start_url": ".",
-    "background_color" : "#ffffff",
-    "theme_color" : "#ffff00",
+    "background_color" : "#54CBCF",
+    "theme_color" : "#54CBCF",
     "display" : "standalone",
     "icons" : [
         {
