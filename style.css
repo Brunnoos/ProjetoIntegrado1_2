@@ -505,11 +505,12 @@ body {
 }
 
 .local-tag {
-	font-family: "Roboto";
+	font-family: "Roboto-Medium";
 	font-size: 14px;
-	color: white;
-	background-color: #FFD951;
+	color: #54CBCF;
+	background-color: #FFFFFF;
 	border-radius: 12px;
+	border: 1.5px solid #54CBCF;
 	margin: 0 9px;
 	padding: 2px 8px;
 }
