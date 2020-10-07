@@ -562,7 +562,7 @@ function generatePlantao(element) {
         "<div class=\"plantao-block\">"+
             "<div class=\"plantao-header\">"+
                 "<p>"+ element.nome+"</p>"+
-                "<a href=\"tel:" + element.numero + "\"><button class=\"call\"></button></a>"+
+                "<a href=\"tel:" + element.numero + "\" class=\"call-container\";><div class=\"call\"></div></a>"+
             "</div>"+
             "<div class=\"documentacao\">"+
                 "<p class=\"doc-title\">Documentação</p>"+
@@ -570,7 +570,7 @@ function generatePlantao(element) {
             "</div>"+
             "<div class=\"mapa-section\">"+
                 "<p>Ver no mapa</p>"+
-                "<a href=\"" + element.link_map + "\" target=\"_blank\"><button class=\"open-map\">mapa</button></a>"+
+                "<a href=\"" + element.link_map + "\" target=\"_blank\" class=\"open-map-container\";><button class=\"open-map\">mapa</button></a>"+
             "</div>"+
         "</div>"
     );

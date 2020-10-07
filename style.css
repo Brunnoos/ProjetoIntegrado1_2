@@ -1,3 +1,13 @@
+* {
+	-webkit-tap-highlight-color: transparent;
+}
+  
+button, 
+button:active, 
+button:focus {
+	outline: none;
+}
+
 /* Fontes ------------------------------------------------------------------------------- */
 @font-face {
 	font-family: "Roboto";
@@ -742,6 +752,11 @@ body {
 	width: 47px;
 	border: none;
 }
+.call-container:active .call{
+	background-color: #FFD951;
+	background-image: url(assets/icons/call_pressed.png);
+}
+
 .documentacao{
 	margin: 0 24px 0 24px;
 	font-size: 18px;
@@ -784,6 +799,11 @@ body {
 	font-size: 11px;
 	line-height: 13px;
 	text-align: center;
+}
+
+.open-map-container:active .open-map{
+	background-color: #348083;
+	color: white;
 }
 
 /* info */
