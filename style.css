@@ -278,6 +278,7 @@ body {
 	background: #C4C4C4;
 	border-radius: 10px;
 	margin: 7px 5px;
+	transition: background-color 0.5s;
 }
 .filter-toggle-icon {
     width: 11px;
@@ -289,10 +290,10 @@ body {
     margin-left: 14px;
 }
 
-.filter-toogle-active {
+.filter-toggle-active {
 	background-color: #54CBCF;
 }
-.filter-toogle-active .filter-toogle-icon {
+.filter-toggle-active .filter-toggle-icon {
 	margin-left: 3px;
 }
 
