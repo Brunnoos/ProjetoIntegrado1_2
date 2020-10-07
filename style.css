@@ -424,6 +424,9 @@ body {
 	width: 28px;
 	margin: 10px 21px 0px 10px;
 }
+.local-ref-info:active{
+	background-image: url(assets/icons/more_info_pressed.png);
+}
 
 .local-ref-map {
 	background-image: url("assets/icons/on_map.png");
@@ -433,6 +436,9 @@ body {
 	height: 28px;
 	width: 28px;
 	margin-top: 10px;
+}
+.local-ref-map:active{
+	background-image: url(assets/icons/on_map_pressed.png);
 }
 
 /* Info do Local ---------------------------------------------------------- */
@@ -567,6 +573,9 @@ body {
 	margin: 2px 10px;
 	border-radius: 24px;
 }
+#local-map-button:active{
+	background-color: #BEA43E;
+}
 
 #local-number-button {
 	background-image: url("assets/icons/call_white.png");
@@ -578,6 +587,9 @@ body {
 	width: 48px;
 	margin: 2px 10px;
 	border-radius: 24px;
+}
+#local-number-button:active{
+	background-color: #BEA43E;
 }
 
 
