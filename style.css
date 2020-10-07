@@ -837,3 +837,89 @@ body {
 .logos{
 	margin-bottom: 18px;
 }
+
+/* menu */
+
+.menu{
+	background-color: #54CBCF;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.logo{
+	background-image: url("assets/icons/logoapp.png");
+	width: 128.95px;
+	height: 131px;
+	background-color: white;
+	background-repeat: no-repeat;
+	background-position: center;
+	border-radius: 100%;
+	margin-top: 78px;
+}
+
+.titulo{
+	width: 70%;
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 36px;
+	line-height: 42px;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	color: white;
+	word-wrap: break-word;
+}
+
+.botoes{
+	display: flex;
+	flex-direction: column;
+	align-content: center;
+}
+
+.link-container{
+	background-color: white;
+	width: 194px;
+	height: 48px;
+	border-radius: 24px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 16px;
+	text-decoration: none;
+}
+.link{
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 24px;
+	line-height: 28px;
+	text-align: center;
+
+	color: #54CBCF;
+	width: 100%;
+}
+.round-btn-container{
+	display: inline-flex;
+	align-self: center;
+}
+.round-btn div{
+	width: 47px;
+	height: 47px;
+	background-color: white;
+	border-radius: 100%;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+#info-menu{
+	background-image: url(assets/icons/info_azul.png);
+}
+
+#if{
+	margin-left: 33px;
+}
+
+#ajuda-menu{
+	background-image: url(assets/icons/ajuda_azul.png);
+}

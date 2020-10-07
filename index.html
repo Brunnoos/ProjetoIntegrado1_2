@@ -1,6 +1,6 @@
-﻿<!DOCTYPE html>
-<html>
-  <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
 	<meta name="theme-color" content="#ffff00">
@@ -14,86 +14,18 @@
 	<script type="text/javascript" src="data.json"></script>
 	<script src="script.js"></script>
 	<script src="index.js"></script>
-  </head>
-  <body>
-	
-	<div id="home">
-		<!-- ---------------------------------------------------- Tab Header ------------------------------------------------------------------------------------- -->
-		<div class="tab-header">
-			<div class="tab-header-title">
-				<p>INSTITUIÇÕES</p>
-			</div>
-
-			<div id="filter-button"></div>
-		</div>
-
-		<!-- ---------------------------------------------------- Filter Tab ------------------------------------------------------------------------------------- -->
-		<div id="filter-tab-bg">
-			<div id="filter-tab">
-				<div id="filter-tab-header">
-					<div id="close-filter-tab"></div>
-					<p>Filtrar por</p>
-				</div>
-
-				<!-- ---------------------------------------------------- Lista de Filters ------------------------------------------------------------------------------------- -->
-				<div id="filters-list">
-					<!-- --------------------------- Exemplo Filter--------------------------------------------- -->
-					<!--<div class="filters">
-						<p class="filters-title">Atendimento</p>
-						<div class="filter-option">Online</div><div class="filter-toggle"><div class="filter-toggle-icon"></div></div>
-						<div class="filter-option">Pessoalmente</div><div class="filter-toggle"><div class="filter-toggle-icon"></div></div>
-						<div class="filter-option">Ambos</div><div class="filter-toggle"><div class="filter-toggle-icon"></div></div>
-					</div> -->
-				</div>
-			</div>
-		</div>
-
-		<!-- ---------------------------------------------------- Lista de Bairros ------------------------------------------------------------------------------------- -->
-		<div id="bairro-list">
-			
-			
-		</div>
-		<!-- ---------------------------------------------------- Bloco de Info de Local ------------------------------------------------------------------------------------- -->
-		<div id="local-block-bg" style="display:none">
-			<div id="local-block">
-				<!-- --------------------------- Header do Local --------------------------------------------- -->
-				<div id="local-header">
-					<p id="local-title">Instituição tal</p> <!-- Título do Local -->
-					<div id="close-local-block"></div>
-				</div>
-
-				<!-- --------------------------- Info do Local --------------------------------------------- -->
-				<div id="local-content">
-					<!-- Tags do Local -->
-					<div id="local-tags">
-						<div class="local-tag">Gratuito</div>
-						<div class="local-tag">Manhã</div>
-						<div class="local-tag">Pessoal</div>
-					</div>
-
-					<!-- --------------------------- Exemplo de Info Específica do Local --------------------------------------------- -->
-					<div>
-						<div class="local-info-title">Horários</div> <!-- Título da categoria da info -->
-						<div class="local-info-desc">Atendimento das 8:00 às 20:00</div> <!-- Info -->
-					</div>
-				</div>
-				<!-- --------------------------- Botões de Acesso Externos --------------------------------------------- -->
-				<div id="local-buttons">
-					<a id="local-map" target="_blank"><div id="local-map-button"></div></a>  <!-- Botão de abrir mapa do Local -->
-					<a id="local-number"><div id="local-number-button"></div></a> <!-- Botão de abrir número no app de telefone -->
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<!-- ---------------------------------------------------- Barra de Navegação ------------------------------------------------------------------------------------- -->
-	<div id="nav-bar">
-		<a class="tab-icon" id="tab-ajuda" href="ajuda.html"><div class="tab-open-border"></div></a>
-		<a class="tab-icon" id="tab-map" href="mapa.html"><div class="tab-open-border"></div></a>
-		<a class="tab-icon tab-open" id="tab-home" href="index.html"><div class="tab-open-border"></div></a>
-		<a class="tab-icon" id="tab-plantao" href="plantao.html"><div class="tab-open-border"></div></a>
-		<a class="tab-icon" id="tab-info" href="info.html"><div class="tab-open-border"></div></a>
-	</div>
-    <!--<iframe id="map" src="https://www.google.com/maps/d/embed?mid=1of16lEXSGfkOzmPUVUvoFMeMLz37zGJI" width="375" height="500"></iframe> -->
-  </body>
+</head>
+<body class="menu">
+    <div class="logo"></div>
+    <h1 class="titulo">Não temos um nome</h1>
+    <div class="botoes">
+        <a class="link-container" href="instituicoes.html"><span class="link">Instituições</span></a>
+        <a class="link-container" href="mapa.html"><span class="link">Mapa</span></a>
+        <a class="link-container" href="plantao.html"><span class="link">Plantão</span></a>
+        <div class="round-btn-container">
+            <a class="round-btn" id="hp" href="ajuda.html"><div id="ajuda-menu"></div></a>
+            <a class="round-btn" id="if" href="info.html"><div id="info-menu"></div></a>
+        </div>
+    </div>
+</body>
 </html>
