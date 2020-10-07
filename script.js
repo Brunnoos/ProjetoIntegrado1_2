@@ -494,14 +494,22 @@ function separaInfo(nm) {
 
             var localContent = "";
 
-            if (element.hasOwnProperty('horario'))
-                localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.horario + "</div></div>";
+            /* Conteúdo em Tags */
+
+            localContent += "<div id=\"local-tags\">";
 
             if (element.hasOwnProperty('preco'))
-                localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.preco + "</div></div>";
+                localContent += "<div class=\"local-tag\">" + element.preco + "</div>";
 
             if (element.hasOwnProperty('atendimento'))
-                localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.atendimento + "</div></div>";
+                localContent += "<div class=\"local-tag\">" + element.atendimento + "</div>";
+
+            localContent += "</div>";
+
+            /* Conteúdo em bloco */
+
+            if (element.hasOwnProperty('horario'))
+                localContent += "<div><div class=\"local-info-title\">Horário</div><div class=\"local-info-desc\">" + element.horario + "</div></div>";
 
             if (element.hasOwnProperty('numero'))
             {
@@ -524,6 +532,8 @@ function separaInfo(nm) {
 
                 $("#local-number").attr("href", "tel:" + element.numero);
             }
+
+            /* Botoes */
             $("#local-map").attr("href", element.link_map);
 
             if (element.hasOwnProperty('endereco'))
