@@ -865,8 +865,6 @@ body {
 	font-weight: bold;
 	font-size: 36px;
 	line-height: 42px;
-	display: flex;
-	align-items: center;
 	text-align: center;
 	color: white;
 	word-wrap: break-word;
@@ -900,6 +898,14 @@ body {
 	color: #54CBCF;
 	width: 100%;
 }
+
+.link-container:active{
+	background-color: #348083;
+}
+.link-container:active .link{
+	color: white;
+}
+
 .round-btn-container{
 	display: inline-flex;
 	align-self: center;
@@ -916,10 +922,21 @@ body {
 	background-image: url(assets/icons/info_azul.png);
 }
 
+#ajuda-menu{
+	background-image: url(assets/icons/ajuda_azul.png);
+}
+
 #if{
 	margin-left: 33px;
 }
 
-#ajuda-menu{
-	background-image: url(assets/icons/ajuda_azul.png);
+.round-btn:active div{
+	background-color: #348083;
+}
+
+.round-btn:active #ajuda-menu{
+	background-image: url(assets/icons/ajuda_azul_pressed.png);
+}
+.round-btn:active #info-menu{
+	background-image: url(assets/icons/info_azul_pressed.png);
 }
