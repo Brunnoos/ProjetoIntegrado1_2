@@ -287,17 +287,19 @@ function filterSelect() {
 
                     filterList[filterType][filterTypeSize] = true;
                     showAllElements();
-
-                    /* UI */
-                    $()
                 }
+
+                 /* UI */
+                    
+                $("#filterType-" + filterType + " .filter-toggle").eq(filterTypeSize).addClass("filter-toggle-active");
             }
             /* Caso um filtro de outro tipo já esteja aplicado, não intefere nele, aprofundando a filtragem */
             else {
                 for (let i = 0; i < inst.length; i++) {
                     var element = inst[i];
 
-                    if (element[filterType].toLowerCase() != inst_filters[filterType][filterIndex]) {
+                    console.log(element[filterType].toLowerCase() + " | " + inst_filters[filterType][filterIndex])
+                    if (element[filterType].toLowerCase() == inst_filters[filterType][filterIndex]) {
                         hideElement(element.nome, filter);
                     }
                 }
@@ -307,7 +309,6 @@ function filterSelect() {
 
             /* UI */
             $(this).removeClass("filter-toggle-active");
-            $("#filterType-" + filterType + " .filter-toggle").eq(filterTypeSize).addClass("filter-toggle-active");
         }
     } 
     /* Caso o filtro esteja desativado -> ativar */
@@ -374,7 +375,7 @@ function filterSelect() {
                     for (let i = 0; i < inst.length; i++) {
                         var element = inst[i];
 
-                        if (element[filterType].toLowerCase() != inst_filters[filterType][filterIndex]) {
+                        if (element[filterType].toLowerCase() == inst_filters[filterType][filterIndex]) {
                             showElement(element.nome, filter);
                         }
                     }
