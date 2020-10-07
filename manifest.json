@@ -8,7 +8,7 @@
     "icons" : [
         {
             "src" :"assets/icons/maskable_icon.png",
-            "sizes" : "349x349",
+            "sizes" : "1024x1024",
             "type" : "image/png",
             "purpose" : "any maskable"
         },
