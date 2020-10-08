@@ -1,10 +1,13 @@
 ﻿var inst = [];
 var list_bairro = [];
 
-var inst_filters = {}; /* Lista de características passiveis de filtro (key) e suas opções (value) */
+var numFilters = 0;
+
+var inst_filters_keys = {}; /* Lista de características passiveis de filtro (key) e um boolean se está ativo */
+var inst_filters_options = {} /* Lista de características passiveis de filtro (key) e as opções */
 
 var filterList = {}; /* Lista de características passiveis de filtro (key) e suas opções (value) em boolean */
-var filterApplied = []; /* True sempre que qualquer filtro esteja ativo */
+var filterApplied = {}; /* True sempre que qualquer filtro de um tipo esteja ativo */
 
 $.get("data.json",
     function (data) {
@@ -55,22 +58,12 @@ $.get("data.json",
                 list_bairro.push({bairro : inst[i].bairro, list : [inst[i]]});
             }
         }
-        
+
         for (let i = 0; i < list_bairro.length; i++) {
             const element = list_bairro[i];
             
-            let list_inst = "";
-
-            for (var key in element.list[0]) {
-                var newList = [];
-                if (key != "nome" && key != "horario" && key != "link_map" && key != "numero" && key != "bairro" && key != "docs"){
-                    if (!(key in inst_filters)) {
-                        inst_filters[key.toLowerCase()] = newList;
-                    }
-                }
-            }
+            let list_inst = "";            
             
-            /* Preenche as variáveis que guardam as listas de características passíveis de aplicar filtro e suas opções */
             for (let j = 0; j < element.list.length; j++) {
                 list_inst += 
                 "<div class=\"local-ref\">"+
@@ -79,10 +72,15 @@ $.get("data.json",
                     "<a href=\"" + element.list[j].link_map + "\" target=\"_blank\"><div class=\"local-ref-map\"></div> </a>"+
                 "</div>";
 
-                for (var key in inst_filters) {
-                    console.log(element.list[j][key] + " | " + inst_filters[key].indexOf(element.list[j][key]));
-                    if (inst_filters[key].indexOf(element.list[j][key].toLowerCase()) == -1) {
-                        inst_filters[key].push(element.list[j][key].toLowerCase());
+                for (var key in element.list[j]){
+                    if (key != "nome" && key != "horario" && key != "link_map" && key != "numero" && key != "bairro" && key != "docs"){
+                        if ((key in inst_filters_keys) ==  false) {
+                            inst_filters_keys[key] = false;
+                            inst_filters_options[key] = [];
+                        }
+                        if (inst_filters_options[key].indexOf(element.list[j][key].toLowerCase()) == -1) {
+                            inst_filters_options[key].push(element.list[j][key].toLowerCase());
+                        }
                     }
                 }
             }
@@ -108,11 +106,23 @@ $.get("data.json",
                 generatePlantao(inst[x]);
             }
         }
+        for (var i = 0; i < inst.length; i++) {
+            var filters = {};
 
-        for (var key in inst_filters) {
-            inst_filters[key].push("tudo");
+            for (key in inst_filters_keys) {
+                var optionBoolList = [];
+
+                for (var j = 0; j < inst_filters_options[key].length; j++) {
+                    optionBoolList.push(false);
+                }
+                filters[key] = optionBoolList;
+                inst_filters_keys[key] = optionBoolList;
+            }
+
+            inst[i]["filters"] = filters;
         }
-        console.log(inst_filters);
+        console.log(inst);
+        console.log(inst_filters_keys);
         createFilterList();
 
         AddClickEvent();
@@ -209,21 +219,8 @@ function closeFilterTab() {
 
 /* Cria a lista de Filtros, tanto o Dicionário que guarda os booleans, quando o html em si */
 function createFilterList() {
-    for (var key in inst_filters) {
-        var newFilterSubList = [];
-
-        for (let i = 0; i < inst_filters[key].length - 1; i++) {
-            newFilterSubList.push(false);
-        }
-
-        newFilterSubList.push(true); /* Opção para Todos */
-
-        filterList[key] = newFilterSubList;
-    }
-
-    console.log(filterList);
-
-    for (var key in filterList) {
+    /* Tipos de filtro (interface) */
+    for (var key in inst_filters_options) {
         switch(key) {
             case "preco":                                     /* Preços */
                 $("#filters-list").append(
@@ -244,25 +241,18 @@ function createFilterList() {
                 break;
         }
     }
-    for (var key in inst_filters) {
-        for (let i = 0; i < inst_filters[key].length; i++) {
+    /* Opções de cada tipo de filtro (interface) */
+    for (var key in inst_filters_options) {
+        for (let i = 0; i < inst_filters_options[key].length; i++) {
             $("#filterType-" + key).append(
-                "<div class=\"filter-option\" type=\"" + key + "\" value=\"" + inst_filters[key][i] + "\">" + 
-                    inst_filters[key][i].substring(0,1).toUpperCase() + inst_filters[key][i].substring(1) +
+                "<div class=\"filter-option\" type=\"" + key + "\" value=\"" + inst_filters_options[key][i] + "\">" + 
+                    inst_filters_options[key][i].substring(0,1).toUpperCase() + inst_filters_options[key][i].substring(1) +
                 "</div>"                
             );
-
-            /* Opção Tudo já visualmente ativa */
-            if (i == inst_filters[key].length - 1) {
-                $("#filterType-" + key).append(    
-                    "<div class=\"filter-toggle filter-toggle-active\"><div class=\"filter-toggle-icon\"></div></div>"
-                );
-            }
-            else {
-                $("#filterType-" + key).append(    
-                    "<div class=\"filter-toggle\"><div class=\"filter-toggle-icon\"></div></div>"
-                );
-            }
+            
+            $("#filterType-" + key).append(    
+                "<div class=\"filter-toggle\"><div class=\"filter-toggle-icon\"></div></div>"
+            );
         }
     }
 }
@@ -270,128 +260,64 @@ function createFilterList() {
 function filterSelect() {
     var filterType = $(this).prev(".filter-option").attr("type");
     var filter = $(this).prev(".filter-option").attr("value");
-    var filterIndex = inst_filters[filterType].indexOf(filter);
+    var filterIndex = inst_filters_options[filterType].indexOf(filter);
 
-    var filterTypeSize = filterList[filterType].length - 1; /* Exclui o último, que equivale a opção Tudo */
-    var filterTypeCount = 0;
+    if ($(this).hasClass("filter-toggle-active") == false){
+        for (let i = 0; i < inst.length; i++) {
+            var local = inst[i];
 
-    /* Caso o filtro já esteja ativado -> desativar */
-    if (filterList[filterType][filterIndex] == true) {
-        /* Caso o filtro a desativar seja o Tudo, não ocorre mudança, pois não é possível desativar esse */
-        if (filterIndex != filterTypeSize) {
-            filterList[filterType][filterIndex] = false;
-
-            /* Caso nenhum outro filtro do mesmo tipo esteja aplicado, aplica o Tudo */
-            if (filterList[filterType].indexOf(true) == -1) {
-                for (let i = 0; i < inst.length; i++) {
-
-                    filterList[filterType][filterTypeSize] = true;
-                    showAllElements();
-                }
-
-                 /* UI */
-                    
-                $("#filterType-" + filterType + " .filter-toggle").eq(filterTypeSize).addClass("filter-toggle-active");
+            if (local[filterType].toLowerCase() != filter) {
+                local["filters"][filterType][filterIndex] = true;
             }
-            /* Caso um filtro de outro tipo já esteja aplicado, não intefere nele, aprofundando a filtragem */
-            else {
-                for (let i = 0; i < inst.length; i++) {
-                    var element = inst[i];
 
-                    console.log(element[filterType].toLowerCase() + " | " + inst_filters[filterType][filterIndex])
-                    if (element[filterType].toLowerCase() == inst_filters[filterType][filterIndex]) {
-                        hideElement(element.nome, filter);
-                    }
-                }
-            }
-    
-            checkBairroList();
-
-            /* UI */
-            $(this).removeClass("filter-toggle-active");
+            changeVisibility(local);
         }
-    } 
-    /* Caso o filtro esteja desativado -> ativar */
+    }
     else {
-        filterList[filterType][filterIndex] = true;
+        for (let i = 0; i < inst.length; i++) {
+            var local = inst[i];
 
-        /* Caso o filtro ativado seja o equivalente a Tudo */
-        if (filterIndex == filterTypeSize) {
-            for (var i = 0; i < filterTypeSize; i++) {
-                filterList[filterType][i] = false;
-                $("#filterType-" + filterType + " .filter-toggle").eq(i).removeClass("filter-toggle-active");
+            if (local[filterType].toLowerCase() != filter) {
+                local["filters"][filterType][filterIndex] = false;
             }
-    
-            showAllElements();
-            checkBairroList();
-        
-            /* UI */
-            $(this).addClass("filter-toggle-active");
-        }
-        /* Caso não */
-        else {
-            /* Checa se, com o filtro mais recente ativado, todos de um tipo ficam ativados, equivalente ao Tudo */
-            for (var i = 0; i < filterTypeSize; i++) {
-                if (filterList[filterType][i] == true) {
-                    filterTypeCount++;
-                }
-            }
-        
-            /* Caso isso tenha ocorrido, torna todos faltos, exceto Tudo, e mostra tudo */
-            if (filterTypeCount == filterTypeSize) {
-                for (var i = 0; i < filterTypeSize; i++) {
-                    filterList[filterType][i] = false;
-                    $("#filterType-" + filterType + " .filter-toggle").eq(i).removeClass("filter-toggle-active");
-                }
-        
-                filterList[filterType][filterTypeSize] = true;
-                showAllElements();
 
-                checkBairroList();
-            
-                /* UI */
-                $("#filterType-" + filterType + " .filter-toggle").eq(filterTypeSize).addClass("filter-toggle-active");
-            }
-            /* Caso não */
-            else {
-                /* Torna a opção Tudo,  que por padrão é true, false */
-                filterList[filterType][filterTypeSize] = false; 
-                $("#filterType-" + filterType + " .filter-toggle").eq(filterTypeSize).removeClass("filter-toggle-active");
-            
-                /* Caso nenhum outro filtro, independente de tipo, esteja aplicado */
-                if (filterApplied != true) {
-                    hideAllElements();
-
-                    for (let i = 0; i < inst.length; i++) {
-                        var element = inst[i];
-
-                        if (element[filterType].toLowerCase() == inst_filters[filterType][filterIndex]) {
-                            showElement(element.nome, filter);
-                        }
-                    }
-                }
-                /* Caso um filtro de outro tipo já esteja aplicado, não intefere nele, aprofundando a filtragem */
-                else {
-                    for (let i = 0; i < inst.length; i++) {
-                        var element = inst[i];
-
-                        if (element[filterType].toLowerCase() == inst_filters[filterType][filterIndex]) {
-                            showElement(element.nome, filter);
-                        }
-                    }
-                }
-        
-                checkBairroList();
-
-                /* UI */
-                $(this).addClass("filter-toggle-active");
-            }
-            console.log(filterList[ filterType ]);
+            changeVisibility(local);
         }
     }
     
-    
+    console.log(inst);
+    console.log(inst_filters_keys);
+    $(this).toggleClass("filter-toggle-active");
+    checkBairroList();
 };
+
+function changeVisibility(local) {
+    $(".local-ref").each(function(){
+        if ($(this).find(".local-ref-info").attr("name") == local.nome)
+        {
+            var checkIfHasFilter = false;
+
+            // Confere se há pelo menos um filtro aplicado neste local
+            for (var filterType in local.filters){
+                for (var i = 0; i < filterType.length; i++) {
+                    if (local.filters[filterType][i] == true) {
+                        checkIfHasFilter = true;
+                    }
+                }
+            }
+
+            // Caso haja, esconde o local
+            if (checkIfHasFilter == true){
+                $(this).css("display", "none");
+            }
+            // Caso não haja, mostra o local
+            else {
+                $(this).css("display", "flex");
+            }
+            
+        }
+    }); 
+}
 
 /* SEM USO NO MOMENTO */
 function reApplyFilter(){
@@ -413,9 +339,8 @@ function reApplyFilter(){
 /* Esconde um elemento */
 function hideElement(nome, filter) {
     $(".local-ref").each(function(){
-        if ($(this).find(".local-ref-info").attr("name") == nome && $(this).attr("filteredBy") == filter)
+        if ($(this).find(".local-ref-info").attr("name") == nome)
         {
-            $(this).attr("filteredBy", null); 
             $(this).css("display", "none");
         }
     });    
@@ -424,10 +349,9 @@ function hideElement(nome, filter) {
 /* Mostra um elemento */
 function showElement(nome, filter) {
     $(".local-ref").each(function(){
-        if ($(this).find(".local-ref-info").attr("name") == nome && $(this).attr("filteredBy") == null )
+        if ($(this).find(".local-ref-info").attr("name") == nome)
         {
             $(this).css("display", "flex");
-            $(this).attr("filteredBy", filter); /* Salva o motivo de ter sido escondido */
         }
     }); 
 };
@@ -437,18 +361,59 @@ function hideAllElements() {
     $(".local-ref").each(function(){
         $(this).css("display", "none");
     });  
+}
+
+/* Mostra todos os elementos que foram escondidos por um tipo de filtro */
+function showAllElementsByFilter(filterType) {
+    $(".local-ref").each(function(){
+        for (var filter in inst_filters[filterType])
+        {
+            if ($(this).attr("filteredBy") == filter){ 
+                $(this).css("display", "flex");
+                $(this).attr("filteredBy", null);
+            }
+        }
+    });  
     
-    filterApplied = true;
+    checkFilterApplied();
 }
 
 /* Mostra todos os elementos */
 function showAllElements() {
     $(".local-ref").each(function(){
-        $(this).css("display", "flex");
-        $(this).attr("filteredBy", null);
+        for (var filter in inst_filters[filterType])
+        {
+            if ($(this).attr("filteredBy") == filter){ 
+                $(this).css("display", "flex");
+                $(this).attr("filteredBy", null);
+            }
+        }
     });  
     
-    filterApplied = false;
+    checkFilterApplied();
+}
+
+/* Checa se algum filtro ainda está aplicado */
+function checkFilterApplied() {
+    var filterListTemp = [];
+
+    for (var filterType in inst_filters){
+        /* Se o único true na array for o equivalente a opção Tudo, salva true */
+        if (filterList[filterType].indexOf(true) == filterList[filterType].length - 1) {
+            filterListTemp.push(true);
+        }
+        else {
+            filterListTemp.push(false);
+        }
+    }
+
+    /* Se houver apenas true na lista temporária, significa que não há filtro aplicado */
+    if (filterListTemp.indexOf(false) != -1) {
+        filterApplied = false;
+    }
+    else {
+        filterApplied = true;
+    }
 }
 
 /* Chega para ver se uma lista de um bairro foi completamente escondida, escondendo tbm o bairro em si */
