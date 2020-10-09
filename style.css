@@ -197,6 +197,10 @@ body {
 	border-radius: 20px;
 }
 
+#filter-button:active{
+	background-color: #BEA43E;
+}
+
 #filter-tab-bg {
 	position: fixed;
 	height:100%;
@@ -425,7 +429,7 @@ body {
 	margin: 10px 21px 0px 10px;
 }
 .local-ref-info:active{
-	background-image: url(assets/icons/more_info_pressed.png);
+	background-image: url("assets/icons/more_info_pressed.png");
 }
 
 .local-ref-map {
@@ -800,12 +804,15 @@ body {
 
 .open-map{
 	margin-left: auto;
-	height: 20px;
-	width: 64px;
+	height: 47px;
+	width: 47px;
 	border: none;
-	border-radius: 10px;
+	border-radius: 100%;
 	color: black;
-	background-color: white;
+	background-color: #FFFFFF;
+	background-image: url("assets/icons/map_plantao.png");
+	background-repeat: no-repeat;
+	background-position: center;
 	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
 	
 	font-family: Roboto;
@@ -814,13 +821,13 @@ body {
 	font-size: 11px;
 	line-height: 13px;
 	text-align: center;
+	margin-left: 14px;
 }
 
-.open-map-container:active .open-map{
-	background-color: #348083;
-	color: white;
+.open-map:active{
+	background-image: url("assets/icons/map_plantao_pressed.png");
+	background-color: #FFD951;
 }
-
 /* info */
 
 .info-container{

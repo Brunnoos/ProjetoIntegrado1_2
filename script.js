@@ -528,14 +528,11 @@ function generatePlantao(element) {
             "<div class=\"plantao-header\">"+
                 "<p>"+ element.nome+"</p>"+
                 "<a href=\"tel:" + element.numero + "\" class=\"call-container\";><div class=\"call\"></div></a>"+
+                "<a href=\"" + element.link_map + "\" target=\"_blank\" class=\"open-map-container\";><button class=\"open-map\"></button></a>"+
             "</div>"+
             "<div class=\"documentacao\">"+
                 "<p class=\"doc-title\">Documentação</p>"+
                 "<p class=\"doc-text\">"+element.docs+"</p>"+
-            "</div>"+
-            "<div class=\"mapa-section\">"+
-                "<p>Ver no mapa</p>"+
-                "<a href=\"" + element.link_map + "\" target=\"_blank\" class=\"open-map-container\";><button class=\"open-map\">mapa</button></a>"+
             "</div>"+
         "</div>"
     );
